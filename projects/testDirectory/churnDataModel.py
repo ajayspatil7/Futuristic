@@ -1,10 +1,20 @@
+# Key steps involved
+# ------------------------------------------------------------------
+# Importing the libraries needed
+# Exploring the dataset and creating a model out of it
+# Compile the model built using the dataset
+# Fitting the model
+# Predicting and Evaluating the model
+# Saving the model in memory for future use
+# Loading the model
+# ------------------------------------------------------------------
+
 # Project specific library import
 from keras.models import Sequential, load_model
 from keras.layers import Dense
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
 import pandas as pd
-
 
 # Dataset path
 csvPath = pd.read_csv('Churn.csv')
@@ -18,7 +28,6 @@ y = csvPath['Churn'].apply(lambda x: 1 if x == "Yes" else 0)
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=.2)
 x_train.head()
 y_train.head()
-
 
 # Building the model
 model = Sequential()
